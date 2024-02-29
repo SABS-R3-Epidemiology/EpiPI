@@ -1,0 +1,7 @@
+[run]
+source = epipi
+omit =
+    epipi/tests/*
+    epipi/version_info.py
+    epipi/__init__.py
+    epipi/run_tests.py
