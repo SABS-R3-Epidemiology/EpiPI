@@ -65,6 +65,7 @@ setup(
         'matplotlib',
         'pandas',
         'scipy',
+        'pystan',
         'arviz'
     ],
     extras_require={
