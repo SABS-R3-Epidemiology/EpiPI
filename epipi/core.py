@@ -130,7 +130,6 @@ def predict_incidences(theta, omega, prior=None, kernel=[], random_seed=None, **
     return predicted_mean, predicted_std
 
 
-
 # class InferenceController():
 
 #     def __init__(self, theta, omega, prior=None, random_seed=None, **kwargs):
