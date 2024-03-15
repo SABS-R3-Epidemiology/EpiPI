@@ -1,6 +1,7 @@
 import unittest
 from prior import Prior, NormalPrior, UniformPrior
 
+
 class TestPriors(unittest.TestCase):
 
     def test_normal_prior_initialization(self):
@@ -35,6 +36,7 @@ class TestPriors(unittest.TestCase):
         prior = Prior(parameters)
         expected_string = "dist([1, 2, 3])"
         self.assertEqual(prior.string(), expected_string)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -2,8 +2,9 @@ import unittest
 from core import InferenceController, predict_incidences
 from epipi import NormalPrior
 import arviz as az
-import numpy.testing as npt
-import numpy as np
+# import numpy.testing as npt
+# import numpy as np
+
 
 class TestInferenceController(unittest.TestCase):
     def setUp(self):
@@ -16,13 +17,14 @@ class TestInferenceController(unittest.TestCase):
     
     def test_initialization(self):
         """Test if InferenceController initializes with correct attributes."""
-        ic = InferenceController(theta=self.theta, omega=self.omega, kernel=self.kernel, prior=self.prior, random_seed=self.random_seed)
+        ic = InferenceController(theta=self.theta, omega=self.omega, kernel=self.kernel,
+                                 prior=self.prior, random_seed=self.random_seed)
         self.assertEqual(ic._n_params, 1)  # Expecting len(theta) - len(kernel)
     
     def test_setup_model(self):
         """Test if the model and data are setup correctly."""
         ic = InferenceController(theta=self.theta, omega=self.omega, kernel=self.kernel, prior=self.prior)
-        ic_noprior = InferenceController(theta=self.theta, omega=self.omega, kernel=self.kernel)
+        _ = InferenceController(theta=self.theta, omega=self.omega, kernel=self.kernel)
         model, data = ic._setup_model(theta=self.theta, omega=self.omega, kernel=self.kernel, prior_list=self.prior)
         self.assertIsInstance(model, str)
         self.assertIsInstance(data, dict)
@@ -31,16 +33,18 @@ class TestInferenceController(unittest.TestCase):
     
     def test_run_method(self):
         """Test the run method executes and returns expected output types."""
-        ic = InferenceController(theta=self.theta, omega=self.omega, kernel=[], prior=self.prior, random_seed=self.random_seed)
-        fit, samples = ic.run()
-        res = az.summary(samples)['mean'].values
+        ic = InferenceController(theta=self.theta, omega=self.omega, kernel=[],
+                                 prior=self.prior, random_seed=self.random_seed)
+        _, samples = ic.run()
+        _ = az.summary(samples)['mean'].values
         # npt.assert_array_almost_equal(res, [0.23, 0.26, np.inf, 0.24], decimal=2)
         ic_nonseed = InferenceController(theta=self.theta, omega=self.omega, kernel=self.kernel, prior=self.prior)
-        fit, samples = ic_nonseed.run()
+        _, samples = ic_nonseed.run()
     
     def test_predict_incidences_function(self):
         """Test the predict_incidences function returns predictions."""
-        mean, std = predict_incidences(theta=self.theta, omega=self.omega, prior=self.prior, random_seed=self.random_seed)
+        mean, std = predict_incidences(theta=self.theta, omega=self.omega,
+                                       prior=self.prior, random_seed=self.random_seed)
         # npt.assert_array_almost_equal(mean, [0.23, 0.26, np.inf, 0.24], decimal=2)
         # npt.assert_array_almost_equal(std, [0.17, 0.26, np.inf, 0.27], decimal=2)
     
@@ -52,6 +56,7 @@ class TestInferenceController(unittest.TestCase):
         with self.assertRaises(ValueError):
             error_prior = [0]
             InferenceController(self.theta, self.omega, self.kernel, error_prior)
+
 
 if __name__ == '__main__':
     unittest.main()

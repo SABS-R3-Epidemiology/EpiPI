@@ -111,7 +111,7 @@ model {
             model_prior_string_list = []
             # Formulate the prior string
             for ind, prior in enumerate(I_prior_list):
-                prefix = "        I[{}] ~ ".format(ind+1)
+                prefix = "        I[{}] ~ ".format(ind + 1)
                 model_prior_string_list.append(prefix + prior.string() + ";")
             # Add the sigma prior string
             model_prior_string_list.append("        sigma ~ " + sigma_prior.string() + ";")
@@ -148,9 +148,11 @@ model {
         -------
 
         fit : stan fit object
-            The fit object returned by the MCMC sampling, how to use this object can be found in the documentation of stan
+            The fit object returned by the MCMC sampling, how to use this object can be found
+            in the documentation of stan
         samples : arviz InferenceData object
-            The samples obejct returned by arviz package, detailed documentation can be found in the documentation of arviz
+            The samples obejct returned by arviz package, detailed documentation can be found
+            in the documentation of arviz
         '''
         # Use the above methods to compile the model, then do sampling
         model = self._compile_model(self.model, self.data)
@@ -178,8 +180,11 @@ def predict_incidences(theta, omega, prior=None, kernel=[], random_seed=None, **
     kernel : list
         A list containing the kernel data
 
-        Kernel is defined since the model will not have enough information to infer the data at the end of time series.
-        The values in the kernel is used to overwrite the poorly predicted values at the end of the time series.
+        Kernel is defined since the model will not have enough information to
+        infer the data at the end of time series.
+
+        The values in the kernel is used to overwrite the poorly predicted
+        values at the end of the time series.
     prior : list of Prior objects
         A list containing customised prior for parameters in inference
     random_seed : int
