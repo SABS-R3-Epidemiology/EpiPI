@@ -65,8 +65,9 @@ setup(
         'matplotlib',
         'pandas',
         'scipy',
-        'branchpro @ git+https://github.com/SABS-R3-Epidemiology/branchpro',
-        'pints'
+        'pystan',
+        'arviz',
+        'nest_asyncio'
     ],
     extras_require={
         'docs': [
