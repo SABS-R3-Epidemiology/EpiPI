@@ -1,25 +1,23 @@
-.. EpiOS documentation master file, created by
-   sphinx-quickstart on Wed Dec 20 14:40:41 2023.
+.. EpiPI documentation master file, created by
+   sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to EpiOS's documentation!
+Welcome to EpiPI's documentation!
 =======================================
 
-This is a python backend for the epios package.
+This is a python backend for the epipi package.
 
 
 Contents
 ========
 
-.. module:: epios
+.. module:: epipi
 
 .. toctree::
 
-    Pre-process
-    Sampler
-    Tester
-    Post-process
+    Prior
+    InferenceController
 
 
 
