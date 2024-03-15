@@ -11,9 +11,9 @@ sys.path.insert(0, os.path.abspath('../..'))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'EpiOS'
-copyright = '2023, Yunli Qi, Tom Reed, Antonio Mastromarino'
-author = 'Yunli Qi, Tom Reed, Antonio Mastromarino'
+project = 'EpiPI'
+copyright = '2024, Yunli Qi'
+author = 'Yunli Qi'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
