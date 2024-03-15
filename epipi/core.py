@@ -27,7 +27,7 @@ class InferenceController():
         A random seed for reproducibility
     kwargs : dict
         Keyword arguments for the stan model
-    
+
     '''
 
     def __init__(self, theta, omega, kernel=[], prior=None, random_seed=None, **kwargs):
@@ -38,11 +38,11 @@ class InferenceController():
         self.param_dict = kwargs
         if len(kernel) > len(theta):
             raise ValueError("Kernel size cannot be greater than the length of the local prevalence list")
-    
+
     def _setup_model(self, theta, omega, kernel, prior_list=None):
         '''
         A private method to setup the stan model string, put the cumsomised prior into the model string.
-        
+
         '''
         # The following is the main model string
         model_pre_string = """
@@ -128,7 +128,7 @@ model {
             "K": kernel
         }
         return model_string, data
-    
+
     def _compile_model(self, model, data):
         '''
         A private method to compile the stan model, which put the model and data together
@@ -139,7 +139,7 @@ model {
         else:
             model = stan.build(model, data)
         return model
-    
+
     def run(self):
         '''
         Method to run the MCMC sampling and return the fit object.

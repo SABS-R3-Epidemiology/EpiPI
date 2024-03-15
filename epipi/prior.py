@@ -1,7 +1,7 @@
 class Prior():
     '''
     The abstract class for prior
-    
+
     Parameters:
     -----------
 

@@ -9,13 +9,25 @@
 This package consists of scripts to run inference of incidecnes on each day based on the prevalence data generated from the sampling. This repository has a Jupyter Notebook file summarising work can be done with this package, which is in the file `work_summary.ipynb`.
 
 ## Installation
-EpiOS is not yet available on [PyPI](https://pypi.org/), but the module can be pip installed locally. The directory should first be downloaded to your local machine, and can then be installed using the command:
+Currently, EpiPI is only tested on MacOS and Linux. Windows are not supported at the moment.
+
+Installation of EpiPI depends on the CPU of the machine that you are using.
+
+### For x86 CPU:
+EpiPI is not yet available on [PyPI](https://pypi.org/), but the module can be pip installed locally. The directory should first be downloaded to your local machine, and can then be installed using the command:
 
 ```console
 pip install -e .
 ```
 
 We also recommend you to install the [EpiABM](https://github.com/SABS-R3-Epidemiology/epiabm) model and [EpiOS](https://github.com/SABS-R3-Epidemiology/EpiOS) to generate the data of infection simulation and do sampling.
+
+### For other CPU:
+Here, a method of installing EpiPI on machines using Apple Silicon Chips is provided:
+
+```console
+make apple_silicon_install
+```
 
 ## Documentation
 
