@@ -23,11 +23,7 @@ pip install -e .
 We also recommend you to install the [EpiABM](https://github.com/SABS-R3-Epidemiology/epiabm) model and [EpiOS](https://github.com/SABS-R3-Epidemiology/EpiOS) to generate the data of infection simulation and do sampling.
 
 ### For other CPU:
-Here, a method of installing EpiPI on machines using Apple Silicon Chips is provided:
-
-```console
-make apple_silicon_install
-```
+For Apple Silicon users, you should firstly use `conda` to install `pystan`. After this, you should manually uninstall the following packages: `httpstan` and `pysimdjson`. Next, you should go to the github repository of `httpstan` to download the `4.10.1` version and install it according to the documentation of `httpstan` for `non-x86 CPU`. Finally, use `pip` to install `pysimdjson==5.0.2`. Now you will have the correct `pystan` working on your Apple Silicon machine.
 
 ## Documentation
 
