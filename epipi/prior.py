@@ -14,6 +14,7 @@ class Prior():
     def string(self):
         return "dist({})".format(self.parameters)
 
+
 class NormalPrior(Prior):
     '''
     A class for normal prior, can generate the corresponding normal prior string for the stan model
@@ -35,6 +36,7 @@ class NormalPrior(Prior):
         This is to output the normal prior string for the stan model
         '''
         return "normal({}, {})".format(self.mu, self.sigma)
+
 
 class UniformPrior(Prior):
     '''
