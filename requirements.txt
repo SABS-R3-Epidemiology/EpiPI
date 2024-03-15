@@ -4,3 +4,4 @@ pandas>=1.4;python_version>="3.8"
 sphinx_rtd_theme
 pystan
 arviz
+nest_asyncio

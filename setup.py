@@ -66,7 +66,8 @@ setup(
         'pandas',
         'scipy',
         'pystan',
-        'arviz'
+        'arviz',
+        'nest_asyncio'
     ],
     extras_require={
         'docs': [
